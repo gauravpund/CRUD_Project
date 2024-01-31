@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { CommonService } from '../common.service';
 
 @Component({
   selector: 'app-updateemp',
@@ -17,10 +18,12 @@ export class UpdateempComponent {
   
   currentEmployeeID:string="";
 
-  constructor(private http:HttpClient)
+  constructor(private http:HttpClient,private comm:CommonService)
   {
 
   }
+
+  baseUrl=this.comm.baseurl;
 
   getEmpData(data:any)
   {
@@ -73,7 +76,7 @@ export class UpdateempComponent {
     
     console.log("This from update function Emp id:"+ this.currentEmployeeID);
 
-    this.http.put("http://localhost:8084/api/v1/employee/update",bodyData,{responseType: 'json'}).subscribe((resultData: any)=>
+    this.http.put(+this.baseUrl+"api/v1/employee/update",bodyData,{responseType: 'json'}).subscribe((resultData: any)=>
     {
         console.log(resultData);
         alert("Employee Registered Updateddd")

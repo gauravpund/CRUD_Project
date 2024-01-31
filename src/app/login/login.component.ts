@@ -17,7 +17,7 @@ emailRegex: RegExp = /^(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`
   
   constructor(private http:HttpClient,private router:Router,private com:CommonService)
   {}
-
+  baseURL=this.com.baseurl;
   loginForm=new FormGroup({
     user_email:new FormControl("",[Validators.required,Validators.pattern(this.emailRegex)]),
     user_password: new FormControl("",[Validators.required,Validators.minLength(8),Validators.maxLength(32)])
@@ -37,7 +37,7 @@ emailRegex: RegExp = /^(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`
       return;
     }
   
-    const url = `http://localhost:8084/api/v1/employee/login/${this.loginForm.value.user_email}/${this.loginForm.value.user_password}`;
+    const url = this.baseURL+"api/v1/employee/login/"+this.loginForm.value.user_email+"/"+this.loginForm.value.user_password
   
     this.http.get(url).subscribe(
       (res: any) => {

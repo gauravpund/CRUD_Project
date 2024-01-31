@@ -7,5 +7,8 @@ export class CommonService {
 
   public login=0;
   public register=0;
+
+  public baseurl="https://crudbackend-production-b529.up.railway.app/";
+
   constructor() { }
 }

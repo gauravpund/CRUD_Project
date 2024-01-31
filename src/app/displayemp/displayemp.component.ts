@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 // import * as jsPDF from 'jspdf';
 import 'jspdf-autotable';
 import jsPDF from 'jspdf';
+import { CommonService } from '../common.service';
 
 
 @Component({
@@ -19,12 +20,13 @@ export class DisplayempComponent {
 
   // currentEmployeeID="";
 
-  constructor(private http: HttpClient )
+  constructor(private http: HttpClient,private comm:CommonService)
   {
     this.getAllEmployee();
  
   }
 
+  baseURL=this.comm.baseurl;
 
 
   generatePDF(): void {
@@ -69,7 +71,7 @@ export class DisplayempComponent {
   getAllEmployee()
   {
     
-    this.http.get("http://localhost:8084/api/v1/employee/getAllEmployee").subscribe((resultData: any)=>
+    this.http.get(+this.baseURL+"api/v1/employee/getAllEmployee").subscribe((resultData: any)=>
     {
         console.log(resultData);
         this.EmployeeArray = resultData;
