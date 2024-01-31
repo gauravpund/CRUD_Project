@@ -40,7 +40,7 @@ emailRegex: RegExp = /^(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`
     }
 
     console.log(this.registerForm.value)
-    this.http.post(+this.baseURL+"api/v1/employee/save",this.registerForm.value,{responseType: 'text'}).subscribe((resultData: any)=>
+    this.http.post(this.baseURL+"api/v1/employee/save",this.registerForm.value,{responseType: 'text'}).subscribe((resultData: any)=>
     {
         console.log(resultData);
         alert("Employee Registered Successfully");

@@ -28,7 +28,7 @@ export class UpdateempComponent {
   getEmpData(data:any)
   {
     this.currentEmployeeID=data.value;
-      this.http.get("http://localhost:8084/api/v1/employee/getOneEmployee"+ "/"+ data.value,{responseType: 'json'}).subscribe((resultData: any)=>
+      this.http.get(this.baseUrl+"api/v1/employee/getOneEmployee"+ "/"+ data.value,{responseType: 'json'}).subscribe((resultData: any)=>
       {
           console.log("Particular data is getting check:"+resultData);
           // this.EmployeeArray=resultData;
@@ -76,7 +76,7 @@ export class UpdateempComponent {
     
     console.log("This from update function Emp id:"+ this.currentEmployeeID);
 
-    this.http.put(+this.baseUrl+"api/v1/employee/update",bodyData,{responseType: 'json'}).subscribe((resultData: any)=>
+    this.http.put(this.baseUrl+"api/v1/employee/update",bodyData,{responseType: 'json'}).subscribe((resultData: any)=>
     {
         console.log(resultData);
         alert("Employee Registered Updateddd")

@@ -20,7 +20,7 @@ export class DeleteempComponent {
   setDelete(data:any)
   {
 console.log("check Employe id:"+data.value);
-    this.http.delete(+this.baseUrl+"api/v1/employee/delete"+ "/"+ data.value,{responseType: 'text'}).subscribe((resultData: any)=>
+    this.http.delete(this.baseUrl+"api/v1/employee/delete"+ "/"+ data.value,{responseType: 'text'}).subscribe((resultData: any)=>
     {
         console.log(resultData);
         alert("Employee Deletedddd");

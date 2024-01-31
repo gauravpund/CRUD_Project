@@ -71,7 +71,7 @@ export class DisplayempComponent {
   getAllEmployee()
   {
     
-    this.http.get(+this.baseURL+"api/v1/employee/getAllEmployee").subscribe((resultData: any)=>
+    this.http.get(this.baseURL+"api/v1/employee/getAllEmployee").subscribe((resultData: any)=>
     {
         console.log(resultData);
         this.EmployeeArray = resultData;
