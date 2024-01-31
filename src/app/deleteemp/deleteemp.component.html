@@ -1,0 +1,79 @@
+<app-navbar></app-navbar>
+<br>
+<br>
+<br>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        /* Add custom styles here if needed */
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        .card {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+    <title>Animated Card</title>
+</head>
+
+<body>
+    <div class="card text-center">
+        <div class="card-body">
+            <form class="form-inline">
+                <div class="form-group mb-2">
+                    <label for="staticEmail2" class="sr-only"><h4>Employee Id</h4></label>
+                    <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="Employee Id:">
+                </div>
+                <div style="margin-left: -50px !important;" class="form-group mx-sm-3 mb-2">
+                    <input type="number" class="form-control" placeholder="Employee Id" #EmployeeItem>
+                </div>
+                <button type="submit" class="btn btn-primary mb-2" (click)="setDelete(EmployeeItem)">Delete Employee</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and Popper.js (required for Bootstrap) -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>
+
+
+
+
+<!-- <form class="form-inline justify-content-center align-items-center">
+    <div class="form-group mb-2">
+      <label for="staticEmail2" class="sr-only"><h4>Employee Id</h4></label>
+      <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="Employee Id:">
+    </div>
+    <div style="margin-left: -50px !important;" class="form-group mx-sm-3 mb-2">
+     
+      <input type="number" class="form-control" placeholder="Employee Id" #EmployeeItem>
+    </div>
+    <button type="submit" class="btn btn-primary mb-2" (click)="setDelete(EmployeeItem)">Delete Employee</button>
+  </form> -->
+<app-footer></app-footer>

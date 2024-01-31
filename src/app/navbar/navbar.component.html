@@ -1,0 +1,103 @@
+
+<header>
+  <nav class="navbar container-fluid">
+    <!-- <h2 class="logo"><a href="#">LOGO</a></h2> -->
+   <img routerLink="/" src="assets/logouse.png" style="height: 85px; width: 85px;">
+    <input type="checkbox" id="menu-toggler">
+    <label for="menu-toggler" id="hamburger-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="24px" height="24px">
+        <path d="M0 0h24v24H0z" fill="none"/>
+        <path d="M3 18h18v-2H3v2zm0-5h18V11H3v2zm0-7v2h18V6H3z"/>
+      </svg>
+    </label>
+    <ul class="all-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+
+      <li class="dropdown" style="width: fit-content !important;">
+        <a href="#" class="text-white" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" style="margin-left: 0px !important;" href="#" routerLink="/update">Update Employee</a>
+          <a class="dropdown-item" style="margin-left: 0px !important;" href="#" routerLink="/delete">Delete Employee</a>
+          <a class="dropdown-item" style="margin-left: 0px !important;" href="#" routerLink="/display">Display Employees</a>
+        </div>
+      </li>
+
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+      <li><a *ngIf="dlogin!=1" href="#contact" routerLink="/login">Login</a></li>
+    
+      <li *ngIf="dlogin==1" class="dropdown" style="width: fit-content !important;">
+        <a href="#" class="text-white" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Profile
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" style="margin-left: 0px !important;" href="#" (click)="logoutPage()" routerLink="/home">Logout</a>
+        </div>
+      </li>
+
+
+      <!-- <li> <a *ngIf="dlogin==1" href="#" style="margin-right:20px;">
+          
+        Profile 
+        <i class="fa-thin fa-user"></i>
+      </a></li> -->
+
+      <li><a *ngIf="dlogin!=1 && dregister!=1" href="#contact" routerLink="/register">Register</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+
+
+<!--
+  Old code
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <title>Simple Website Design</title>
+  
+</head>
+<body>
+  <div class="container">
+    <nav style="width: 1380px;">
+      <div class="logo">
+        <a href="#">Employe<span>Ltd.</span></a>
+      </div>
+      <ul>
+        <li><a href="#" routerLink="/">Home</a></li>
+        <li><a href="#" routerLink="/aboutus">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#" routerLink="/helpus">HelpUs</a></li>
+
+        <li class="dropdown show">
+          <a href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Employee Actions</a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="aspec dropdown-item" href="#" routerLink="/update">Update Employee</a>
+            <a class="aspec dropdown-item" href="#" routerLink="/delete">Delete Employee</a>
+            <a class="aspec dropdown-item" routerLink="/display">Display Employees</a>
+          </div>
+        </li>
+
+      </ul>
+      <div class="buttons">
+        <a *ngIf="dlogin!=1" href="#" routerLink="/login" class="login">Log in</a>
+        <a *ngIf="dlogin==1" href="#" style="margin-right:20px;">
+          
+          Profile 
+          <i class="fa-thin fa-user"></i>
+        </a>
+
+        <a *ngIf="dlogin!=1 && dregister!=1" href="#" routerLink="/register" class="btn">Register</a>
+      </div>
+    </nav>
+  </div>
+</body>
+</html> -->

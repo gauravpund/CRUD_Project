@@ -1,0 +1,77 @@
+<app-navbar></app-navbar>
+<form [formGroup]="registerForm" (ngSubmit)="registerNow()">
+    <div class="container-fluid mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-5 border">
+                <div class="p-3">
+                    <h5>New User</h5>
+                    <h1>Register Here</h1>
+                    <br>
+                    <input type="text" placeholder="Enter Your Name" formControlName="employeename" class="form-control"
+                        style="border-radius: 0px"
+                        [ngClass]="{error:getControl('employeename')?.errors && getControl('employeename')?.touched}"
+                        required>
+                    <div *ngIf="getControl('employeename')?.errors && getControl('employeename')?.touched">
+                        <small class="text-danger" *ngIf="getControl('employeename')?.errors?.['required']">Employee
+                            Name is required</small>
+                        <small class="text-danger" *ngIf="getControl('employeename')?.errors?.['maxlength']">Only 32
+                            characters are allowed!</small>
+                        <!-- style="color:red" -->
+                    </div>
+
+                    <br><br>
+                    <input type="text" placeholder="Enter Your Mobile" formControlName="mobile" class="form-control"
+                        style="border-radius: 0px;"
+                        [ngClass]="{error:getControl('mobile')?.errors && getControl('mobile')?.touched}" required>
+                    <div *ngIf="getControl('mobile')?.errors && getControl('mobile')?.touched">
+                        <small class="text-danger" *ngIf="getControl('mobile')?.errors?.['required']">Mobile number is
+                            required</small>
+                        <small class="text-danger"
+                            *ngIf="getControl('mobile')?.errors?.['maxlength'] || getControl('mobile')?.errors?.['minlength'] || getControl('mobile')?.errors?.['pattern']">enter
+                            valid mobile no.!</small>
+                        <!-- style="color:red" -->
+                    </div>
+
+
+                    <br><br>
+                    <input type="text" placeholder="Enter Your Email" formControlName="employeemail"
+                        class="form-control" style="border-radius: 0px;"
+                        [ngClass]="{error:getControl('employeemail')?.errors && getControl('employeemail')?.touched}"
+                        required>
+                    <div *ngIf="getControl('employeemail')?.errors && getControl('employeemail')?.touched">
+                        <small class="text-danger" *ngIf="getControl('employeemail')?.errors?.['required']">email is
+                            required</small>
+                        <small class="text-danger" *ngIf="getControl('employeemail')?.errors?.['maxlength']">Only 32
+                            characters are allowed!</small>
+                        <small class="text-danger" *ngIf="getControl('employeemail')?.errors?.['pattern']">please enter
+                            valid email!</small>
+                        <!-- style="color:red" -->
+                    </div>
+
+
+                    <br><br>
+                    <input type="password" placeholder="Enter Your Password" formControlName="employeepassword"
+                        class="form-control" style="border-radius: 0px;"
+                        [ngClass]="{error:getControl('employeepassword')?.errors && getControl('employeepassword')?.touched}"
+                        required>
+
+                    <div *ngIf="getControl('employeepassword')?.errors && getControl('employeepassword')?.touched">
+                        <small class="text-danger" *ngIf="getControl('employeepassword')?.errors?.['required']">password
+                            is required</small>
+                        <small class="text-danger"
+                            *ngIf="getControl('employeepassword')?.errors?.['maxlength'] || getControl('employeepassword')?.errors?.['minlength']">password
+                            should be minimum 8 and maximum 32 characters long...!</small>
+                        <!-- style="color:red" -->
+                    </div>
+
+
+                    <br><br>
+                    <button class="btn btn-dark btn-lg" style="border-radius: 0px;">Register Now</button>
+                    <br><br>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<app-footer></app-footer>

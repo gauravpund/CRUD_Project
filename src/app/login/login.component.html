@@ -1,0 +1,87 @@
+<app-navbar></app-navbar>
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glassmorphism Login Form | CodingNepal</title>
+</head>
+<body>
+  <div class="wrapper">
+    <form action="#">
+      <h2>Login</h2>
+        <div class="input-field">
+        <input type="text" required>
+        <label>Enter your email</label>
+      </div>
+      <div class="input-field">
+        <input type="password" required>
+        <label>Enter your password</label>
+      </div>
+      <div class="forget">
+        <label for="remember">
+          <input type="checkbox" id="remember">
+          <p>Remember me</p>
+        </label>
+        <a href="#">Forgot password?</a>
+      </div>
+      <button type="submit">Log In</button>
+      <div class="register">
+        <p>Don't have an account? <a href="#">Register</a></p>
+      </div>
+    </form>
+  </div>
+</body>
+</html> -->
+
+<br>
+<br><br>
+<br><br>
+<br>
+<form [formGroup]="loginForm" (ngSubmit)="loginNow()">
+<div class="container-fluid mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-5 border">
+            <div class="p-3">
+                <h5>Already User</h5>
+                <h1>Login Here</h1>
+                <br>
+                <input type="email" placeholder="Enter Your Email" formControlName="user_email" class="form-control"
+                    style="border-radius: 0px;border: 1px solid black;" [ngClass]="{error:getControl('user_email')?.errors && getControl('user_email')?.touched}">
+                    <div *ngIf="getControl('user_email')?.errors && getControl('user_email')?.touched">
+                        <small class="text-danger" *ngIf="getControl('user_email')?.errors?.['required']">email is
+                            required</small>
+                        <small class="text-danger" *ngIf="getControl('user_email')?.errors?.['maxlength']">Only 32
+                            characters are allowed!</small>
+                        <small class="text-danger" *ngIf="getControl('user_email')?.errors?.['pattern']">please enter
+                            valid email!</small>
+                       
+                    </div>
+                    <br><br>
+                    <input type="password" placeholder="Enter Your Password" formControlName="user_password" class="form-control"
+                    style="border-radius: 0px;border: 1px solid black;"[ngClass]="{error:getControl('user_password')?.errors && getControl('user_password')?.touched}"
+                    required>
+
+                <div *ngIf="getControl('user_password')?.errors && getControl('user_password')?.touched">
+                    <small class="text-danger" *ngIf="getControl('user_password')?.errors?.['required']">password
+                        is required</small>
+                    <small class="text-danger"
+                        *ngIf="getControl('user_password')?.errors?.['maxlength'] || getControl('user_password')?.errors?.['minlength']">password
+                        should be minimum 8 and maximum 32 characters long...!</small>
+                    
+                </div>
+
+
+
+                 <br><br>
+                 <button type="submit" class="btn btn-dark btn-lg" style="border-radius: 0px;">Login Now</button>
+                 <br><br>
+
+            </div>
+        </div>
+    </div>
+</div>
+</form>
+<app-footer></app-footer>
+

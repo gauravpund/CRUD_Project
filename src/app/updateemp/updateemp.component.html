@@ -1,0 +1,136 @@
+<app-navbar></app-navbar>
+<br>
+<br>
+<br><br>
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+      
+        .card {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+    <title>Animated Cards</title>
+</head>
+
+<body>
+    <div class="container-fluid mt-5">
+        <div class="row justify-content-around">
+         
+            <div class="col-md-5 card border">
+                <div class="p-3">
+                    <form class="text-center">
+                        <h4 class="mb-4">Get Employee Details</h4>
+                        <div class="form-group">
+                            <label for="employeeId" class="sr-only">Employee Id</label>
+                            <input type="number" class="form-control" id="employeeId" placeholder="Enter Employee Id">
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-3">Get Details</button>
+                    </form>
+                </div>
+            </div>
+
+         
+            <div class="col-md-5 card border">
+                <div class="p-3">
+                    <form class="text-center">
+                        <h5>Already User</h5>
+                        <h2>Update Here</h2>
+                        <br>
+                        <input type="text" placeholder="Enter Your Name" class="form-control"
+                            style="border-radius: 0px; border: 1px solid black;">
+                        <br><br>
+                        <input type="text" placeholder="Enter Your Mobile" class="form-control"
+                            style="border-radius: 0px; border: 1px solid black;">
+                        <br><br>
+                        <input type="text" placeholder="Enter Your Email" class="form-control"
+                            style="border-radius: 0px; border: 1px solid black;">
+                        <br><br>
+                        <input type="text" placeholder="Enter Your Password" class="form-control"
+                            style="border-radius: 0px; border: 1px solid black;">
+                        <br><br>
+                        <button type="submit" class="btn btn-dark btn-lg" style="border-radius: 0px;">Update Now</button>
+                        <br><br>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+
+</html> -->
+
+
+
+
+
+<form class="form-inline justify-content-center align-items-center">
+    <div class="form-group mb-2">
+      <label for="staticEmail2" class="sr-only"><h4>Get Employee</h4></label>
+      <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="Get Employee Details:">
+    </div>
+    <div style="margin-left: 0px !important;" class="form-group mx-sm-3 mb-2">
+      
+      <input type="number" class="form-control" placeholder="Employee Id" #employeid>
+    </div>
+    <button type="submit" class="btn btn-primary mb-2" (click)="getEmpData(employeid)">Get Details</button>
+  </form>
+
+  
+
+
+  <form >
+    <div class="container-fluid mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-5 border">
+            <div class="p-3">
+                <h5>Already User</h5>
+                <h2>Update Here</h2>
+                <br>
+                <input type="text" placeholder="Enter Your Name" [(ngModel)]="employeename" [ngModelOptions]="{standalone:true}" class="form-control"
+                style="border-radius: 0px;border: 1px solid black;">
+                <br><br>
+                <input type="text" placeholder="Enter Your Mobile" [(ngModel)]="mobile" [ngModelOptions]="{standalone:true}" class="form-control"
+                    style="border-radius: 0px;border: 1px solid black;">
+                    <br><br>
+                    <input type="text" placeholder="Enter Your Email" [(ngModel)]="employeemail" [ngModelOptions]="{standalone:true}" class="form-control"
+                    style="border-radius: 0px;border: 1px solid black;">
+                    <br><br>
+                    <input type="text" placeholder="Enter Your Password" [(ngModel)]="employeepassword" [ngModelOptions]="{standalone:true}" class="form-control"
+                    style="border-radius: 0px;border: 1px solid black;">
+                 <br><br>
+                 <button type="submit" class="btn btn-dark btn-lg" style="border-radius: 0px;" (click)="UpdateRecords()">Update Now</button>
+                 <br><br>
+
+            </div>
+        </div>
+    </div>
+    </div>
+</form>
+
+
+
+<app-footer></app-footer>

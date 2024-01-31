@@ -1,0 +1,150 @@
+
+
+
+.li {
+display: inline-block;
+}
+
+.li a {
+color: white;
+display: block;
+padding: 10px 20px;
+text-decoration: none;
+}
+
+/* Style the dropdown menu */
+.ul {
+position: absolute;
+top: 100%;
+display: none;
+}
+
+.ul li {
+display: block;
+}
+
+.li:hover ul {
+display: block;
+}
+
+/* Change the background color of dropdown links on hover */
+.ul li a:hover {
+background-color: #555;
+}
+
+
+
+/* * {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Karla', sans-serif;
+}
+
+
+.container {
+  width: 100%;
+
+}
+
+nav {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #000;
+
+}
+
+.logo a {
+  font-size: 40px;
+  text-decoration: none;
+}
+
+span {
+  color: #f9004d;
+}
+
+nav ul li {
+  display: inline-block;
+  list-style: none;
+  margin: 10px 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  transition: 0.5s;
+}
+
+nav ul li a:hover {
+  color: #f9004d;
+}
+
+.login {
+  text-decoration: none;
+  margin-right: 15px;
+  font-size: 18px;
+}
+
+.btn {
+  background: #000;
+  border-radius: 6px;
+  padding: 9px 25px;
+  text-decoration: none;
+  transition: 0.5s;
+  font-size: 18px;
+}
+
+a {
+  color: #fff;
+}
+.aspec{
+  color: #000 !important;
+}
+
+.link {
+  margin-top: 30px;
+}
+
+.hire {
+  color: #000;
+  text-decoration: none;
+  background: #fff;
+  padding: 9px 25px;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: 0.5s;
+}
+
+.link .hire:hover {
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+ */
+
+
+
+
+/*
+nav a:hover {
+  background-color: #555;
+}
+
+ .dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #333;
+  min-width: 160px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+} */

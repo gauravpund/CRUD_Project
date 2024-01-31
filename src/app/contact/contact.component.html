@@ -1,0 +1,129 @@
+<section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <p>Reach out to us for any inquiries or feedback.</p>
+    <div class="row">
+      <div class="col information">
+        <div class="contact-details">
+          <p><i class="fas fa-map-marker-alt"></i> 123 Campsite Avenue, Wilderness, CA 98765</p>
+          <p><i class="fas fa-envelope"></i> info@softrasystem.com</p>
+          <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+          <p><i class="fas fa-clock"></i> Monday - Friday: 9:00 AM - 5:00 PM</p>
+          <p><i class="fas fa-clock"></i> Saturday: 10:00 AM - 3:00 PM</p>
+          <p><i class="fas fa-clock"></i> Sunday: Closed</p>
+          <p><i class="fas fa-globe"></i> www.softrasystem.com</p>
+        </div>          
+      </div>
+      <div class="col form">
+        <form [formGroup]="contactForm" (ngSubmit)="saveNow()">
+          <br>
+          <input type="text" placeholder="Enter Your Name" formControlName="name" class="form-control"
+              style="border-radius: 0px"
+              [ngClass]="{error:getControl('name')?.errors && getControl('name')?.touched}"
+              required>
+          <div *ngIf="getControl('name')?.errors && getControl('name')?.touched">
+              <small class="text-danger" *ngIf="getControl('name')?.errors?.['required']">Employee
+                  Name is required</small>
+              <small class="text-danger" *ngIf="getControl('name')?.errors?.['maxlength']">Only 32
+                  characters are allowed!</small>
+              <!-- style="color:red" -->
+          </div>
+
+
+         <br>
+                    <input type="text" placeholder="Enter Your Email" formControlName="email"
+                        class="form-control" style="border-radius: 0px;"
+                        [ngClass]="{error:getControl('email')?.errors && getControl('email')?.touched}"
+                        required>
+                    <div *ngIf="getControl('email')?.errors && getControl('email')?.touched">
+                        <small class="text-danger" *ngIf="getControl('email')?.errors?.['required']">email is
+                            required</small>
+                        <small class="text-danger" *ngIf="getControl('email')?.errors?.['maxlength']">Only 32
+                            characters are allowed!</small>
+                        <small class="text-danger" *ngIf="getControl('email')?.errors?.['pattern']">please enter
+                            valid email!</small>
+                        <!-- style="color:red" -->
+                    </div>
+
+
+          <br>
+                    <input type="text" placeholder="Enter Your Message" formControlName="message" class="form-control"
+                        style="border-radius: 0px"
+                        [ngClass]="{error:getControl('message')?.errors && getControl('message')?.touched}"
+                        required>
+                    <div *ngIf="getControl('message')?.errors && getControl('message')?.touched">
+                        <small class="text-danger" *ngIf="getControl('message')?.errors?.['required']">Employee
+                            Name is required</small>
+                        <small class="text-danger" *ngIf="getControl('message')?.errors?.['maxlength']">Only 32
+                            characters are allowed!</small>
+                        <!-- style="color:red" -->
+                    </div>
+
+                    
+                    <button class="btn btn-dark btn-lg" style="border-radius: 0px;">Send Message</button>
+
+        </form>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- <form [formGroup]="contactForm" (ngSubmit)="saveNow()">
+    <div class="container-fluid mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-5 border">
+                <div class="p-3">
+                    <h5>New User</h5>
+                    <h1>Register Here</h1>
+                    <br>
+                    <input type="text" placeholder="Enter Your Name" formControlName="employeename" class="form-control"
+                        style="border-radius: 0px"
+                        [ngClass]="{error:getControl('employeename')?.errors && getControl('employeename')?.touched}"
+                        required>
+                    <div *ngIf="getControl('employeename')?.errors && getControl('employeename')?.touched">
+                        <small class="text-danger" *ngIf="getControl('employeename')?.errors?.['required']">Employee
+                            Name is required</small>
+                        <small class="text-danger" *ngIf="getControl('employeename')?.errors?.['maxlength']">Only 32
+                            characters are allowed!</small>
+                    </div>
+
+          
+
+                    <br><br>
+                    <input type="text" placeholder="Enter Your Email" formControlName="employeemail"
+                        class="form-control" style="border-radius: 0px;"
+                        [ngClass]="{error:getControl('employeemail')?.errors && getControl('employeemail')?.touched}"
+                        required>
+                    <div *ngIf="getControl('employeemail')?.errors && getControl('employeemail')?.touched">
+                        <small class="text-danger" *ngIf="getControl('employeemail')?.errors?.['required']">email is
+                            required</small>
+                        <small class="text-danger" *ngIf="getControl('employeemail')?.errors?.['maxlength']">Only 32
+                            characters are allowed!</small>
+                        <small class="text-danger" *ngIf="getControl('employeemail')?.errors?.['pattern']">please enter
+                            valid email!</small>
+                    </div>
+
+
+                    <br><br>
+                    <input type="text" placeholder="Enter Your Message" formControlName="msg" class="form-control"
+                        style="border-radius: 0px"
+                        [ngClass]="{error:getControl('msg')?.errors && getControl('msg')?.touched}"
+                        required>
+                    <div *ngIf="getControl('msg')?.errors && getControl('msg')?.touched">
+                        <small class="text-danger" *ngIf="getControl('msg')?.errors?.['required']">Employee
+                            Name is required</small>
+                        <small class="text-danger" *ngIf="getControl('msg')?.errors?.['maxlength']">Only 32
+                            characters are allowed!</small>
+                    </div>
+
+
+
+                    <br><br>
+                    <button class="btn btn-dark btn-lg" style="border-radius: 0px;">Register Now</button>
+                    <br><br>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</form> -->
